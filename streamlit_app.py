@@ -6,10 +6,10 @@ st.title("User Input Form")
 # Create a form to collect user inputs
 with st.form(key='user_input_form'):
     # Input fields
-    name = st.text_input("Enter your name:")
+    occupation = st.text_input("Enter your name:")
     age = st.number_input("Enter your age:", min_value=0)
-    email = st.text_input("Enter your email:")
-    favorite_color = st.selectbox("Select your favorite color:", ['Red', 'Green', 'Blue', 'Yellow', 'Purple'])
+    daily_steps = st.text_input("Enter your daily steps:")
+    physical_activity_level = st.selectbox("Enter your pyhsical activity level")
 
     # Submit button
     submit_button = st.form_submit_button(label='Submit')
@@ -17,7 +17,7 @@ with st.form(key='user_input_form'):
     if submit_button:
         # Display the collected inputs
         st.write("Thank you for your submission!")
-        st.write(f"Name: {name}")
+        st.write(f"Name: {occupation}")
         st.write(f"Age: {age}")
-        st.write(f"Email: {email}")
-        st.write(f"Favorite Color: {favorite_color}")
+        st.write(f"Email: {daily_steps}")
+        st.write(f"Favorite Color: {physical_activity_level}")

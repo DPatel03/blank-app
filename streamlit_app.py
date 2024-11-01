@@ -13,6 +13,9 @@ with st.form(key='user_input_form'):
 
     physical_activity_level = st.number_input("Enter your physical activity level (1 to 10):", 
                                                min_value=1, max_value=10)
+    stress_level = st.number_input("Enter your stress level (1 to 10):", 
+                                               min_value=1, max_value=10)
+
 
     submit_button = st.form_submit_button(label='Submit')
 
@@ -23,4 +26,5 @@ with st.form(key='user_input_form'):
         st.write(f"Age: {age}")
         st.write(f"Daily Steps: {daily_steps}")
         st.write(f"Physical Activity Level: {physical_activity_level}")
+        st.write(f" stress_level: {stress_level}")
 

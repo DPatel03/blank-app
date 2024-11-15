@@ -43,14 +43,26 @@ with st.form(key='user_input_form'):
     # Submit Button
     submit_button = st.form_submit_button(label="Submit")
 
+    # Check if any fields are missing
     if submit_button:
-        # Success Message
-        st.success("Thank you for your submission!")
-        
-        # Display User's Input
-        st.write("### Submitted Information")
-        st.write(f"**Occupation:** {occupation}")
-        st.write(f"**Age:** {age}")
-        st.write(f"**Daily Steps:** {daily_steps}")
-        st.write(f"**Physical Activity Level:** {physical_activity_level}")
-        st.write(f"**Stress Level:** {stress_level}")
+        if not occupation:
+            st.error("Please enter your occupation.")
+        elif age == 0:
+            st.error("Please enter a valid age.")
+        elif daily_steps == 0:
+            st.error("Please enter your daily steps.")
+        elif physical_activity_level < 1 or physical_activity_level > 10:
+            st.error("Please enter a physical activity level between 1 and 10.")
+        elif stress_level < 1 or stress_level > 10:
+            st.error("Please enter a stress level between 1 and 10.")
+        else:
+            # All fields are filled, show success message
+            st.success("Thank you for your submission!")
+            
+            # Display User's Input
+            st.write("### Submitted Information")
+            st.write(f"**Occupation:** {occupation}")
+            st.write(f"**Age:** {age}")
+            st.write(f"**Daily Steps:** {daily_steps}")
+            st.write(f"**Physical Activity Level:** {physical_activity_level}")
+            st.write(f"**Stress Level:** {stress_level}")

@@ -51,10 +51,6 @@ with st.form(key='user_input_form'):
             st.error("Please enter a valid age.")
         elif daily_steps == 0:
             st.error("Please enter your daily steps.")
-        elif physical_activity_level < 1 or physical_activity_level > 10:
-            st.error("Please enter a physical activity level between 1 and 10.")
-        elif stress_level < 1 or stress_level > 10:
-            st.error("Please enter a stress level between 1 and 10.")
         else:
             # All fields are filled, show success message
             st.success("Thank you for your submission!")

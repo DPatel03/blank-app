@@ -1,32 +1,32 @@
 import streamlit as st
 import joblib
 import pandas as pd
-'''
+
 # load trained model
-rf_model = joblib.load("sleep-quality-regressor.joblib")
+# rf_model = joblib.load("sleep-quality-regressor.joblib")
 
-# define function that produces output
-def produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate):
+# # define function that produces output
+# def produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate):
     
-    # hold user input
-    user_input = {
-    'Sleep Duration': sleep_duration,
-    'Stress Level': stress_level,
-    'Age': age,
-    'Heart Rate': heart_rate,
-    'Physical Activity Level': physical_activity_level,
-    'Daily Steps': daily_steps
-    }
+#     # hold user input
+#     user_input = {
+#     'Sleep Duration': sleep_duration,
+#     'Stress Level': stress_level,
+#     'Age': age,
+#     'Heart Rate': heart_rate,
+#     'Physical Activity Level': physical_activity_level,
+#     'Daily Steps': daily_steps
+#     }
 
-    # dataframe to hold input
-    user_input_df = pd.DataFrame([user_input])
-    # print(user_input_df)
+#     # dataframe to hold input
+#     user_input_df = pd.DataFrame([user_input])
+#     # print(user_input_df)
 
-    # predict using model
-    pred_rf = rf_model.predict(user_input_df)
+#     # predict using model
+#     pred_rf = rf_model.predict(user_input_df)
 
-    return pred_rf[0]
-'''
+#     return pred_rf[0]
+
 # -------------------------------------- APP --------------------------------------------
 
 # Title
@@ -105,8 +105,7 @@ with st.form(key='user_input_form'):
             st.write(f"**Sleep Duration:** {sleep_duration}")         
             st.write(f"**Physical Activity Level:** {physical_activity_level}")
             st.write(f"**Stress Level:** {stress_level}")
-'''
+
             # sleep quality determiner
-            sleep_quality = produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate)
-            st.write(f"**Sleep Quality:** {sleep_quality}")
-'''
+            # sleep_quality = produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate)
+            # st.write(f"**Sleep Quality:** {sleep_quality}")

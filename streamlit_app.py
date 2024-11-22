@@ -1,7 +1,7 @@
 import streamlit as st
 import joblib
 import pandas as pd
-
+'''
 # load trained model
 rf_model = joblib.load("sleep-quality-regressor.joblib")
 
@@ -26,7 +26,7 @@ def produce_output(age, daily_steps, physical_activity_level, stress_level, slee
     pred_rf = rf_model.predict(user_input_df)
 
     return pred_rf[0]
-
+'''
 # -------------------------------------- APP --------------------------------------------
 
 # Title

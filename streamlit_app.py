@@ -156,19 +156,7 @@ if submit_button:
     st.write(f"**Sleep Duration:** {sleep_duration}")         
     st.write(f"**Physical Activity Level:** {physical_activity_level}")
     st.write(f"**Stress Level:** {stress_level}")
-       
-
-        # # Display Result
-        # st.markdown('<div class="result-card">', unsafe_allow_html=True)
-        # st.markdown(
-        #     f"""
-        #     <div class="result-text">
-        #         Based on your inputs, your predicted sleep quality is: <strong>{predicted_quality}</strong>.
-        #     </div>
-        #     """,
-        #     unsafe_allow_html=True,
-        # )
-        # st.markdown('</div>', unsafe_allow_html=True)
+    
 
 
 

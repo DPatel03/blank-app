@@ -146,16 +146,15 @@ with st.form(key="user_input_form"):
 st.markdown('</div>', unsafe_allow_html=True)
 
 # ---------------------------- PREDICTION ----------------------------
-if submit_button:
-    if not occupation:
-        st.error("Please enter your occupation.")
-    elif age == 0:
-        st.error("Please enter a valid age.")
-    elif daily_steps == 0:
-        st.error("Please enter your daily steps.")
-    else:
-        nothing
-       
+# Submit Button
+    submit_button = st.form_submit_button(label="Submit")
+            st.write(f"**Occupation:** {occupation}")
+            st.write(f"**Age:** {age}")
+            st.write(f"**Daily Steps:** {daily_steps}")
+            st.write(f"**Heart Rate:** {heart_rate}")  
+            st.write(f"**Sleep Duration:** {sleep_duration}")         
+            st.write(f"**Physical Activity Level:** {physical_activity_level}")
+            st.write(f"**Stress Level:** {stress_level}")
        
 
         # # Display Result

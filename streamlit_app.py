@@ -73,13 +73,16 @@ with st.form(key='user_input_form'):
     )
 
     # Sleep Duration
-    sleep_duration = st.slider(
-        "Sleep Duration", 
-        min_value=1, 
-        max_value=15, 
-        value=5, 
-        help="1 = 1 hour, 15 = 15 hours"
+
+    sleep_duration = st.number_input(
+        "Sleep Duration (in hours)", 
+        min_value=0.0, 
+        max_value=24.0, 
+        value=5.0, 
+        step=0.5, 
+        help="Enter the number of hours you sleep per day (e.g., 7.5)"
     )
+
     
     # Submit Button
     submit_button = st.form_submit_button(label="Submit")

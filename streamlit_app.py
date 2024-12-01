@@ -99,7 +99,6 @@ st.markdown(
 
 # ---------------------------- HEADER ----------------------------
 st.markdown('<div class="title">Sleep Quality Predictor</div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">Harness the power of AI to understand your sleep better.</div>', unsafe_allow_html=True)
 
 # ---------------------------- FORM ----------------------------
 st.markdown('<div class="card">', unsafe_allow_html=True)
@@ -155,8 +154,7 @@ if submit_button:
     elif daily_steps == 0:
         st.error("Please enter your daily steps.")
     else:
-        # Simulated prediction (replace with your model's prediction logic)
-        predicted_quality = "Excellent" if sleep_duration >= 7 else "Poor"
+       
 
         # # Display Result
         # st.markdown('<div class="result-card">', unsafe_allow_html=True)

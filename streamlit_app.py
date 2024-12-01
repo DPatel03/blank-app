@@ -1,6 +1,9 @@
-import streamlit as st
 import joblib
 import pandas as pd
+import streamlit as st
+from streamlit_lottie import st_lottie
+import requests
+
 
 # load trained model
 # rf_model = joblib.load("sleep-quality-regressor.joblib")
@@ -30,49 +33,105 @@ import pandas as pd
 # -------------------------------------- APP --------------------------------------------
 
 # Title
-st.title("User Input Form")
+st.set_page_config(
+    page_title="Sleep Quality Predictor",
+    page_icon="🛌",
+    layout="wide",
+)
+
+# Function to load Lottie animation
+def load_lottie_url(url: str):
+    response = requests.get(url)
+    if response.status_code != 200:
+        return None
+    return response.json()
+
+# Load Lottie animation
+lottie_sleep = load_lottie_url("https://assets10.lottiefiles.com/packages/lf20_kfntiw8v.json")
+
+# Custom CSS for styling
+st.markdown("""
+    <style>
+        body {
+            background-color: #e8f5e9;
+            font-family: 'Arial', sans-serif;
+        }
+        .main {
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #2e7d32;
+        }
+        .stButton button {
+            background-color: #66bb6a !important;
+            color: white !important;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .stButton button:hover {
+            background-color: #43a047 !important;
+        }
+        .block-container {
+            padding: 2rem 3rem;
+        }
+        .separator {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, #43a047, #2e7d32);
+            margin: 20px 0;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+# Header with Animation
+col1, col2 = st.columns([2, 1])
+with col1:
+    st.title("🌟 Sleep Quality Predictor")
+    st.write("#### Your personalized tool to understand your sleep habits.")
+    st.markdown("<hr class='separator'>", unsafe_allow_html=True)
+with col2:
+    st_lottie(lottie_sleep, height=150, key="sleep_animation")
+
+# Progress Tracker
+st.subheader("Step 1: Enter Your Information")
 
 # Basic Information Section
-st.header("Basic Information")
 with st.form(key='user_input_form'):
-    st.write("Please provide some basic information about yourself.")
-    
-    # Occupation and Age Fields
     col1, col2 = st.columns(2)
     with col1:
         occupation = st.text_input("Occupation", placeholder="Enter your occupation")
     with col2:
-        age = st.number_input("Age", min_value=0, max_value=120, help="Enter your age (0-120)")
+        age = st.number_input("Age", min_value=0, max_value=120, step=1, help="Enter your age (0-120)")
     
-    # Daily Steps
-    daily_steps = st.number_input("Daily Steps", min_value=0, step=100, help="Enter your average daily step count")
+    col3, col4 = st.columns(2)
+    with col3:
+        daily_steps = st.number_input("Daily Steps", min_value=0, step=100, help="Enter your average daily step count")
+    with col4:
+        heart_rate = st.number_input("Heart Rate", min_value=0, step=1, help="Enter your resting heart rate")
 
-    # Daily Steps
-    heart_rate = st.number_input("Heart Rate", min_value=0, step=100, help="Enter your heart rate")
+    st.markdown("<hr class='separator'>", unsafe_allow_html=True)
 
     # Lifestyle Factors Section
-    st.header("Lifestyle Factors")
-    st.write("Rate the following factors on a scale from 1 to 10.")
-    
-    # Physical Activity Level
-    physical_activity_level = st.slider(
-        "Physical Activity Level", 
-        min_value=1, 
-        max_value=10, 
-        value=5, 
-        help="1 = Very low activity, 10 = Very high activity"
-    )
-    
-    # Stress Level
-    stress_level = st.slider(
-        "Stress Level", 
-        min_value=1, 
-        max_value=10, 
-        value=5, 
-        help="1 = Very low stress, 10 = Very high stress"
-    )
-
-    # Sleep Duration
+    st.subheader("Step 2: Rate Your Lifestyle")
+    col5, col6 = st.columns(2)
+    with col5:
+        physical_activity_level = st.slider(
+            "Physical Activity Level", 
+            min_value=1, 
+            max_value=10, 
+            value=5, 
+            help="1 = Very low activity, 10 = Very high activity"
+        )
+    with col6:
+        stress_level = st.slider(
+            "Stress Level", 
+            min_value=1, 
+            max_value=10, 
+            value=5, 
+            help="1 = Very low stress, 10 = Very high stress"
+        )
 
     sleep_duration = st.number_input(
         "Sleep Duration (in hours)", 
@@ -82,32 +141,38 @@ with st.form(key='user_input_form'):
         step=0.5, 
         help="Enter the number of hours you sleep per day (e.g., 7.5)"
     )
-
     
-    # Submit Button
-    submit_button = st.form_submit_button(label="Submit")
+    st.markdown("<hr class='separator'>", unsafe_allow_html=True)
 
-    # Check if any fields are missing
-    if submit_button:
-        if not occupation:
-            st.error("Please enter your occupation.")
-        elif age == 0:
-            st.error("Please enter a valid age.")
-        elif daily_steps == 0:
-            st.error("Please enter your daily steps.")
-        else:
-            # All fields are filled, show success message
-            st.success("Thank you for your submission!")
-            
-            # Display User's Input
-            st.write("### Submitted Information")
+    submit_button = st.form_submit_button(label="📤 Submit")
+
+if submit_button:
+    if not occupation:
+        st.error("🚨 Please enter your occupation.")
+    elif age == 0:
+        st.error("🚨 Please enter a valid age.")
+    elif daily_steps == 0:
+        st.error("🚨 Please enter your daily steps.")
+    else:
+        st.success("✅ Thank you for your submission!")
+        
+        st.markdown("<hr class='separator'>", unsafe_allow_html=True)
+        st.subheader("Your Submission:")
+        col1, col2 = st.columns(2)
+        with col1:
             st.write(f"**Occupation:** {occupation}")
             st.write(f"**Age:** {age}")
             st.write(f"**Daily Steps:** {daily_steps}")
+        with col2:
             st.write(f"**Heart Rate:** {heart_rate}")  
             st.write(f"**Sleep Duration:** {sleep_duration}")         
             st.write(f"**Physical Activity Level:** {physical_activity_level}")
             st.write(f"**Stress Level:** {stress_level}")
+        
+        st.markdown("<hr class='separator'>", unsafe_allow_html=True)
+        # sleep_quality = produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate)
+        # st.subheader(f"🌙 Predicted Sleep Quality: {sleep_quality}")
+
 
             # sleep quality determiner
             # sleep_quality = produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate)

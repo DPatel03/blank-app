@@ -154,6 +154,8 @@ if submit_button:
     elif daily_steps == 0:
         st.error("Please enter your daily steps.")
     else:
+        nothing
+       
        
 
         # # Display Result

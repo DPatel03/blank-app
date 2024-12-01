@@ -40,14 +40,8 @@ st.set_page_config(
 )
 
 # Function to load Lottie animation
-def load_lottie_url(url: str):
-    response = requests.get(url)
-    if response.status_code != 200:
-        return None
-    return response.json()
 
-# Load Lottie animation
-lottie_sleep = load_lottie_url("https://assets10.lottiefiles.com/packages/lf20_kfntiw8v.json")
+
 
 # Custom CSS for styling
 st.markdown("""

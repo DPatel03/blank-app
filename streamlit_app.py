@@ -69,13 +69,13 @@ st.markdown(
     """
     <style>
     [data-testid="stAppViewContainer"] {
-        background: #09134d;
+        background: #050b2b;
         font-family: 'Arial', sans-serif;
     }
     .title {
         text-align: center;
         color: white;
-        font-size: 3rem;
+        font-size: 4rem;
         font-weight: bold;
         margin-top: 20px;
     }

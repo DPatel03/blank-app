@@ -15,29 +15,53 @@ def load_rf():
     return rf
 rf = load_rf()
 
-# define function that produces output
-def produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate):
+# # define function that produces output
+# def produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate):
     
-    # hold user input
+#     # hold user input
+#     user_input = {
+#     'Sleep Duration': sleep_duration,
+#     'Stress Level': stress_level,
+#     'Age': age,
+#     'Heart Rate': heart_rate,
+#     'Physical Activity Level': physical_activity_level,
+#     'Daily Steps': daily_steps
+#     }
+
+#     # dataframe to hold input
+#     user_input_df = pd.DataFrame([user_input])
+#     # print(user_input_df)
+
+#     # predict using model
+#     pred_rf = rf.predict(user_input_df)
+#     print(pred_rf)
+#     return pred_rf[0]
+
+# Ensure features match those used during training
+def produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate):
+    # Hold user input
     user_input = {
-    'Sleep Duration': sleep_duration,
-    'Stress Level': stress_level,
-    'Age': age,
-    'Heart Rate': heart_rate,
-    'Physical Activity Level': physical_activity_level,
-    'Daily Steps': daily_steps
+        'Age': age,
+        'Daily Steps': daily_steps,
+        'Physical Activity Level': physical_activity_level,
+        'Stress Level': stress_level,
+        'Sleep Duration': sleep_duration,
+        'Heart Rate': heart_rate,
+        'Occpuation': occupation
     }
 
-    # dataframe to hold input
+    # Create DataFrame to hold input
     user_input_df = pd.DataFrame([user_input])
-    # print(user_input_df)
 
-    # predict using model
+    # Reorder columns to match model's expected input
+    expected_columns = list(rf.feature_names_in_)
+    user_input_df = user_input_df[expected_columns]  # Align input DataFrame columns
+
+    # Predict using model
     pred_rf = rf.predict(user_input_df)
     print(pred_rf)
     return pred_rf[0]
 
-# -------------------------------------- APP --------------------------------------------
 
 
 # ---------------------------- STYLING ----------------------------

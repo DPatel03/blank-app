@@ -37,8 +37,47 @@ rf = load_rf()
 #     return pred_rf[0]
 
 # Ensure features match those used during training
+# def produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate, occupation):
+#     # Hold user input
+#     user_input = {
+#         'Age': age,
+#         'Daily Steps': daily_steps,
+#         'Physical Activity Level': physical_activity_level,
+#         'Stress Level': stress_level,
+#         'Sleep Duration': sleep_duration,
+#         'Heart Rate': heart_rate,
+#         'Occupation': occupation  # Directly add the occupation integer
+#     }
+
+#     # Create DataFrame from user input
+#     user_input_df = pd.DataFrame([user_input])
+
+#     # Align DataFrame columns to match model's expected input
+#     expected_columns = list(rf.feature_names_in_)
+#     user_input_df = user_input_df.reindex(columns=expected_columns, fill_value=0)
+
+#     # Predict using model
+#     pred_rf = rf.predict(user_input_df)
+#     print(pred_rf)
+#     return pred_rf[0]
 def produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate, occupation):
-    # Hold user input
+    # Map occupation to integer
+    occupation_mapping = {
+        "Nurse": 1,
+        "Teacher": 2,
+        "Salesperson": 3,
+        "Doctor": 4,
+        "Engineer": 5,
+        "Lawyer": 6,
+        "Accountant": 7,
+        "Scientist": 8,
+        "Software Engineer": 9,
+        "Sales Representative": 10,
+        "Manager": 11,
+    }
+    occupation_encoded = occupation_mapping.get(occupation, 0)
+
+    # Prepare input data
     user_input = {
         'Age': age,
         'Daily Steps': daily_steps,
@@ -46,20 +85,23 @@ def produce_output(age, daily_steps, physical_activity_level, stress_level, slee
         'Stress Level': stress_level,
         'Sleep Duration': sleep_duration,
         'Heart Rate': heart_rate,
-        'Occupation': occupation  # Directly add the occupation integer
+        'Occupation': occupation_encoded,
     }
 
-    # Create DataFrame from user input
+    # Create DataFrame
     user_input_df = pd.DataFrame([user_input])
 
-    # Align DataFrame columns to match model's expected input
+    # Align columns with model's expected input
     expected_columns = list(rf.feature_names_in_)
     user_input_df = user_input_df.reindex(columns=expected_columns, fill_value=0)
 
+    # Debugging
+    st.write("Input DataFrame for Prediction:", user_input_df)
+
     # Predict using model
     pred_rf = rf.predict(user_input_df)
-    print(pred_rf)
     return pred_rf[0]
+
 
 
 # ---------------------------- STYLING ----------------------------

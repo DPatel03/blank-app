@@ -167,7 +167,6 @@ if submit_button:
     
 
 
-
-            # sleep quality determiner
-            # sleep_quality = produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate)
-            # st.write(f"**Sleep Quality:** {sleep_quality}")
+# sleep quality determiner
+sleep_quality = produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate)
+st.write(f"**Sleep Quality:** {sleep_quality}")

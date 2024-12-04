@@ -1,8 +1,7 @@
 import pickle
 import pandas as pd
 import streamlit as st
-from streamlit_lottie import st_lottie
-import requests
+
 
 st.set_page_config(page_title="Sleep Quality Predictor", page_icon="💤", layout="wide")
 # with open('rf.sav', 'rb') as f:
@@ -40,8 +39,6 @@ def produce_output(age, daily_steps, physical_activity_level, stress_level, slee
 
 # -------------------------------------- APP --------------------------------------------
 
-import streamlit as st
-import pandas as pd
 
 # ---------------------------- STYLING ----------------------------
 

@@ -134,13 +134,6 @@ st.markdown('<div class="card">', unsafe_allow_html=True)
 # st.header("User Input Form")
 with st.form(key="user-input-form"):
     # Occupation and Age Fields
-    # col1, col2 = st.columns(2)
-    # with col1:
-    #     occupation = st.text_input("Occupation", placeholder="Enter your occupation")
-    # with col2:
-    #     age = st.number_input("Age", min_value=0, max_value=100, help="Enter your age (0-100)")
-
-    # Occupation and Age Fields
     col1, col2 = st.columns(2)
     with col1:
     # Select occupation from predefined list
@@ -169,13 +162,12 @@ with st.form(key="user-input-form"):
             help="Enter your age (10-90)"
         )
 
-
     # Daily Steps and Heart Rate
     col3, col4 = st.columns(2)
     with col3:
-        daily_steps = st.number_input("Daily Steps", min_value=0, step=100, help="Enter your average daily step count")
+        daily_steps = st.number_input("Daily Steps", min_value=0, mmax_value = 75000, step=100, help="Enter your average daily step count")
     with col4:
-        heart_rate = st.number_input("Heart Rate", min_value=0, step=1, help="Enter your heart rate")
+        heart_rate = st.number_input("Heart Rate", min_value=40, max_value = step=125 , help="Enter your heart rate (40-125)")
 
     # Lifestyle Factors Section
     st.subheader("Lifestyle Factors")

@@ -71,6 +71,7 @@ st.markdown(
     [data-testid="stAppViewContainer"] {
         background: #050b2b;
         font-family: 'Arial', sans-serif;
+        padding-top: 0;
     }
     .title {
         text-align: center;

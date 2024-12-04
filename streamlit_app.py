@@ -1,34 +1,41 @@
-import joblib
+import pickle
 import pandas as pd
 import streamlit as st
 from streamlit_lottie import st_lottie
 import requests
 
+# with open('rf.sav', 'rb') as f:
+#     rf = pickle.load(f)
 
 # load trained model
-# rf_model = joblib.load("sleep-quality-regressor.joblib")
+@st.cache_resource
+def load_rf():
+    with open('rf.sav', 'rb') as f:
+        rf = pickle.load(f)
+    return rf
+rf = load_rf()
 
-# # define function that produces output
-# def produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate):
+# define function that produces output
+def produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate):
     
-#     # hold user input
-#     user_input = {
-#     'Sleep Duration': sleep_duration,
-#     'Stress Level': stress_level,
-#     'Age': age,
-#     'Heart Rate': heart_rate,
-#     'Physical Activity Level': physical_activity_level,
-#     'Daily Steps': daily_steps
-#     }
+    # hold user input
+    user_input = {
+    'Sleep Duration': sleep_duration,
+    'Stress Level': stress_level,
+    'Age': age,
+    'Heart Rate': heart_rate,
+    'Physical Activity Level': physical_activity_level,
+    'Daily Steps': daily_steps
+    }
 
-#     # dataframe to hold input
-#     user_input_df = pd.DataFrame([user_input])
-#     # print(user_input_df)
+    # dataframe to hold input
+    user_input_df = pd.DataFrame([user_input])
+    # print(user_input_df)
 
-#     # predict using model
-#     pred_rf = rf_model.predict(user_input_df)
-
-#     return pred_rf[0]
+    # predict using model
+    pred_rf = rf.predict(user_input_df)
+    print(pred_rf)
+    return pred_rf[0]
 
 # -------------------------------------- APP --------------------------------------------
 

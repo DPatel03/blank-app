@@ -60,6 +60,7 @@ rf = load_rf()
 #     pred_rf = rf.predict(user_input_df)
 #     print(pred_rf)
 #     return pred_rf[0]
+# fix version
 def produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate, occupation):
     # Map occupation to integer
     occupation_mapping = {
@@ -197,9 +198,9 @@ with st.form(key="user-input-form"):
     with col2:
         age = st.number_input(
             "Age", 
-            min_value=10, 
+            min_value=5, 
             max_value=90, 
-            help="Enter your age (10-90)"
+            help="Enter your age (5-90)"
         )
 
     # Daily Steps and Heart Rate
@@ -265,4 +266,4 @@ st.markdown('</div>', unsafe_allow_html=True)
     
 # sleep quality determiner
 sleep_quality = produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate, occupation)
-st.write(f"**Sleep Quality:** {sleep_quality}")
+#st.write(f"**Sleep Quality:** {sleep_quality}")

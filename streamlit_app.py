@@ -85,7 +85,7 @@ st.markdown(
         font-size: 1.2rem;
         margin-bottom: 40px;
     }
-    .input-card {
+    .card {
         background: white;
         border-radius: 15px;
         padding: 30px;
@@ -129,10 +129,11 @@ st.markdown('<div class="title">ZzzPredict</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">A Sleep Quality Prediction Model</div>', unsafe_allow_html=True)
 
 # ---------------------------- FORM ----------------------------
-st.markdown('<div class="input-card">', unsafe_allow_html=True)
+# st.markdown('<div class="card">', unsafe_allow_html=True)
 
 # st.header("User Input Form")
-with st.form(key="input-card"):
+with st.form(key="user-input-form"):
+    st.markdown('<div class="card">', unsafe_allow_html=True)
     # Occupation and Age Fields
     col1, col2 = st.columns(2)
     with col1:

@@ -165,7 +165,7 @@ with st.form(key="user-input-form"):
     # Daily Steps and Heart Rate
     col3, col4 = st.columns(2)
     with col3:
-        daily_steps = st.number_input("Daily Steps", min_value=0, mmax_value = 75000, step=100, help="Enter your average daily step count")
+        daily_steps = st.number_input("Daily Steps", min_value=0, max_value = 75000, step=100, help="Enter your average daily step count")
     with col4:
         heart_rate = st.number_input("Heart Rate", min_value=40, max_value = 125, steps = 1, help="Enter your heart rate (40-125)")
 

@@ -251,21 +251,16 @@ with st.form(key="user-input-form"):
 st.markdown('</div>', unsafe_allow_html=True)
 
 # ---------------------------- PREDICTION ----------------------------
-# Submit Button
-# if submit_button:
-#     # Display the user inputs after submission
-#     st.write(f"**Occupation:** {occupation}")
-#     st.write(f"**Age:** {age}")
-#     st.write(f"**Daily Steps:** {daily_steps}")
-#     st.write(f"**Heart Rate:** {heart_rate}")  
-#     st.write(f"**Sleep Duration:** {sleep_duration}")         
-#     st.write(f"**Physical Activity Level:** {physical_activity_level}")
-#     st.write(f"**Stress Level:** {stress_level}")
-    
-# sleep quality determiner
-# sleep_quality = produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate, occupation)
-# st.write(f"**Sleep Quality:** {sleep_quality}")
-
+Submit Button
+if submit_button:
+    # Display the user inputs after submission
+    st.write(f"**Occupation:** {occupation}")
+    st.write(f"**Age:** {age}")
+    st.write(f"**Daily Steps:** {daily_steps}")
+    st.write(f"**Heart Rate:** {heart_rate}")  
+    st.write(f"**Sleep Duration:** {sleep_duration}")         
+    st.write(f"**Physical Activity Level:** {physical_activity_level}")
+    st.write(f"**Stress Level:** {stress_level}")
     # Call the prediction function
     sleep_quality = produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate, occupation)
     
@@ -275,3 +270,9 @@ st.markdown('</div>', unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
 else:
     st.write("Please fill in the form and click 'Predict Sleep Quality' to see your results.")
+    
+# sleep quality determiner
+# sleep_quality = produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate, occupation)
+# st.write(f"**Sleep Quality:** {sleep_quality}")
+
+

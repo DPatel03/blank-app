@@ -1,6 +1,6 @@
-joblib
 pandas
 streamlit
 requests
 streamlit-lottie
-
+pickle
+scikit-learn

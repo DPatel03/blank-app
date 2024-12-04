@@ -251,7 +251,7 @@ with st.form(key="user-input-form"):
 st.markdown('</div>', unsafe_allow_html=True)
 
 # ---------------------------- PREDICTION ----------------------------
-Submit Button
+# Submit Button
 if submit_button:
     # Display the user inputs after submission
     st.write(f"**Occupation:** {occupation}")

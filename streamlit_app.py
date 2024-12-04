@@ -189,7 +189,7 @@ with st.form(key="user-input-form"):
             help="1 = Very low stress, 10 = Very high stress"
         )
     with col7:
-        sleep_duration = st.number_input("Sleep Duration (hours)", min_value=1, max_value=15, step=1, help="Enter sleep duration in hours")
+        sleep_duration = st.number_input("Sleep Duration (hours)", min_value=1, max_value=10, step=1, help="Enter sleep duration in hours")
     
     # Submit Button
     submit_button = st.form_submit_button(label="Predict Sleep Quality", type="primary")

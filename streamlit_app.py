@@ -165,9 +165,19 @@ with st.form(key="user-input-form"):
     # Daily Steps and Heart Rate
     col3, col4 = st.columns(2)
     with col3:
-        daily_steps = st.number_input("Daily Steps", min_value=0, max_value = 75000, step=100, help="Enter your average daily step count")
+        daily_steps = st.number_input(
+            "Daily Steps", 
+            min_value=0, 
+            max_value = 75000,
+            step=100, 
+            help="Enter your average daily step count")
     with col4:
-        heart_rate = st.number_input("Heart Rate",  min_value=40, max_value=170,  step=1, help="Enter your heart rate (40-175 bpm)")
+        heart_rate = st.number_input(
+            "Heart Rate",  
+            min_value=40, 
+            max_value=170,  
+            step=1, 
+            help="Enter your heart rate (40-175 bpm)")
 
     # Lifestyle Factors Section
     st.subheader("Lifestyle Factors")
@@ -189,7 +199,12 @@ with st.form(key="user-input-form"):
             help="1 = Very low stress, 10 = Very high stress"
         )
     with col7:
-        sleep_duration = st.number_input("Sleep Duration (hours)", min_value=1, max_value=10, step=1, help="Enter sleep duration in hours")
+        sleep_duration = st.number_input(
+            "Sleep Duration (hours)", 
+            min_value=1, 
+            max_value=10, 
+            step=1, 
+            help="Enter sleep duration in hours")
     
     # Submit Button
     submit_button = st.form_submit_button(label="Predict Sleep Quality", type="primary")

@@ -82,7 +82,7 @@ st.markdown(
     .subtitle {
         text-align: center;
         color: white;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         margin-bottom: 40px;
     }
     .card {

@@ -167,7 +167,7 @@ with st.form(key="user-input-form"):
     with col3:
         daily_steps = st.number_input("Daily Steps", min_value=0, mmax_value = 75000, step=100, help="Enter your average daily step count")
     with col4:
-        heart_rate = st.number_input("Heart Rate", min_value=40, max_value = step=125 , help="Enter your heart rate (40-125)")
+        heart_rate = st.number_input("Heart Rate", min_value=40, max_value = 125, help="Enter your heart rate (40-125)")
 
     # Lifestyle Factors Section
     st.subheader("Lifestyle Factors")

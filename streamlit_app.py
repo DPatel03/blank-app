@@ -268,8 +268,7 @@ if submit_button:
     st.markdown('<div class="result-card">', unsafe_allow_html=True)
     st.markdown(f'<div class="result-text">Sleep Quality: {sleep_quality}</div>', unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
-else:
-    st.write("Please fill in the form and click 'Predict Sleep Quality' to see your results.")
+
     
 # sleep quality determiner
 # sleep_quality = produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate, occupation)

@@ -134,11 +134,41 @@ st.markdown('<div class="card">', unsafe_allow_html=True)
 # st.header("User Input Form")
 with st.form(key="user-input-form"):
     # Occupation and Age Fields
-    col1, col2 = st.columns(2)
-    with col1:
-        occupation = st.text_input("Occupation", placeholder="Enter your occupation")
-    with col2:
-        age = st.number_input("Age", min_value=0, max_value=100, help="Enter your age (0-100)")
+    # col1, col2 = st.columns(2)
+    # with col1:
+    #     occupation = st.text_input("Occupation", placeholder="Enter your occupation")
+    # with col2:
+    #     age = st.number_input("Age", min_value=0, max_value=100, help="Enter your age (0-100)")
+
+    # Occupation and Age Fields
+col1, col2 = st.columns(2)
+with col1:
+    # Select occupation from predefined list
+    occupation = st.selectbox(
+        "Select Occupation",
+        [
+            "Nurse",
+            "Teacher",
+            "Salesperson",
+            "Doctor",
+            "Engineer",
+            "Lawyer",
+            "Accountant",
+            "Scientist",
+            "Software Engineer",
+            "Sales Representative",
+            "Manager",
+        ],
+        help="Choose your occupation from the list"
+    )
+with col2:
+    age = st.number_input(
+        "Age", 
+        min_value=10, 
+        max_value=90, 
+        help="Enter your age (10-90)"
+    )
+
 
     # Daily Steps and Heart Rate
     col3, col4 = st.columns(2)

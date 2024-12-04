@@ -95,9 +95,6 @@ def produce_output(age, daily_steps, physical_activity_level, stress_level, slee
     expected_columns = list(rf.feature_names_in_)
     user_input_df = user_input_df.reindex(columns=expected_columns, fill_value=0)
 
-    # Debugging
-    st.write("Input DataFrame for Prediction:", user_input_df)
-
     # Predict using model
     pred_rf = rf.predict(user_input_df)
     return pred_rf[0]

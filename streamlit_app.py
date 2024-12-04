@@ -68,7 +68,7 @@ def produce_output(age, daily_steps, physical_activity_level, stress_level, slee
 st.markdown(
     """
     <style>
-    body {
+    [data-testid="stAppViewContainer"] {
         background: #11248f;
         font-family: 'Arial', sans-serif;
     }

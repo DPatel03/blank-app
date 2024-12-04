@@ -2,7 +2,6 @@ import pickle
 import pandas as pd
 import streamlit as st
 
-
 st.set_page_config(page_title="Sleep Quality Predictor", page_icon="💤", layout="wide")
 # with open('rf.sav', 'rb') as f:
 #     rf = pickle.load(f)
@@ -63,9 +62,6 @@ def produce_output(age, daily_steps, physical_activity_level, stress_level, slee
     return pred_rf[0]
 
 
-
-
-
 # ---------------------------- STYLING ----------------------------
 
 
@@ -73,7 +69,7 @@ st.markdown(
     """
     <style>
     body {
-        background: linear-gradient(to bottom right, #4facfe, #00f2fe);
+        background: #11248f;
         font-family: 'Arial', sans-serif;
     }
     .title {

@@ -4,6 +4,7 @@ import streamlit as st
 from streamlit_lottie import st_lottie
 import requests
 
+st.set_page_config(page_title="Sleep Quality Predictor", page_icon="💤", layout="wide")
 # with open('rf.sav', 'rb') as f:
 #     rf = pickle.load(f)
 
@@ -43,7 +44,7 @@ import streamlit as st
 import pandas as pd
 
 # ---------------------------- STYLING ----------------------------
-st.set_page_config(page_title="Sleep Quality Predictor", page_icon="💤", layout="wide")
+
 
 st.markdown(
     """

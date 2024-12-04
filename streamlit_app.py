@@ -88,7 +88,7 @@ st.markdown(
     .card {
         background: white;
         border-radius: 15px;
-        padding: 30px;
+        padding: 50px;
         margin: auto;
         max-width: 700px;
         box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);

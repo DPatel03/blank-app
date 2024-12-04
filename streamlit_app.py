@@ -263,5 +263,15 @@ st.markdown('</div>', unsafe_allow_html=True)
 #     st.write(f"**Stress Level:** {stress_level}")
     
 # sleep quality determiner
-sleep_quality = produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate, occupation)
-st.write(f"**Sleep Quality:** {sleep_quality}")
+# sleep_quality = produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate, occupation)
+# st.write(f"**Sleep Quality:** {sleep_quality}")
+
+    # Call the prediction function
+    sleep_quality = produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate, occupation)
+    
+    # Display the prediction result
+    st.markdown('<div class="result-card">', unsafe_allow_html=True)
+    st.markdown(f'<div class="result-text">Sleep Quality: {sleep_quality}</div>', unsafe_allow_html=True)
+    st.markdown('</div>', unsafe_allow_html=True)
+else:
+    st.write("Please fill in the form and click 'Predict Sleep Quality' to see your results.")

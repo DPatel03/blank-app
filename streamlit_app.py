@@ -70,7 +70,7 @@ st.markdown(
     <style>
     [data-testid="stAppViewContainer"] {
         background: #050b2b;
-        font-family: 'monospace', 'monaco';
+        font-family: 'Arial', sans-serif;
     }
     .title {
         text-align: center;

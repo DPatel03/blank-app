@@ -78,6 +78,7 @@ st.markdown(
         color: white;
         font-size: 4rem;
         font-weight: bold;
+        margin-top: 0;
     }
     .subtitle {
         text-align: center;

@@ -46,32 +46,22 @@ def produce_output(age, daily_steps, physical_activity_level, stress_level, slee
         'Physical Activity Level': physical_activity_level,
         'Stress Level': stress_level,
         'Sleep Duration': sleep_duration,
-        'Heart Rate': heart_rate
+        'Heart Rate': heart_rate,
+        'Occupation': occupation  # Directly add the occupation integer
     }
 
-    # One-hot encode Occupation
-    occupation_categories = [
-        'Occupation_Doctor', 'Occupation_Engineer', 'Occupation_Lawyer',
-        'Occupation_Manager', 'Occupation_Nurse', 'Occupation_Sales Representative',
-        'Occupation_Salesperson', 'Occupation_Scientist', 'Occupation_Software Engineer',
-        'Occupation_Teacher'
-    ]
-    occupation_one_hot = {f'Occupation_{cat}': 0 for cat in occupation_categories}
-    if f'Occupation_{occupation}' in occupation_one_hot:
-        occupation_one_hot[f'Occupation_{occupation}'] = 1
-
-    # Merge user input with one-hot encoded Occupation
-    user_input.update(occupation_one_hot)
-
-    # Create DataFrame and reorder columns to match the model's expected input
+    # Create DataFrame from user input
     user_input_df = pd.DataFrame([user_input])
+
+    # Align DataFrame columns to match model's expected input
     expected_columns = list(rf.feature_names_in_)
-    user_input_df = user_input_df.reindex(columns=expected_columns, fill_value=0)  # Align and fill missing columns
+    user_input_df = user_input_df.reindex(columns=expected_columns, fill_value=0)
 
     # Predict using model
     pred_rf = rf.predict(user_input_df)
     print(pred_rf)
     return pred_rf[0]
+
 
 
 

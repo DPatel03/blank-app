@@ -85,7 +85,7 @@ st.markdown(
         font-size: 1.2rem;
         margin-bottom: 40px;
     }
-    .card {
+    .input-card {
         background: white;
         border-radius: 15px;
         padding: 30px;
@@ -129,7 +129,7 @@ st.markdown('<div class="title">ZzzPredict</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">A Sleep Quality Prediction Model</div>', unsafe_allow_html=True)
 
 # ---------------------------- FORM ----------------------------
-st.markdown('<div class="card">', unsafe_allow_html=True)
+st.markdown('<div class="input-card">', unsafe_allow_html=True)
 
 # st.header("User Input Form")
 with st.form(key="user_input_form"):
@@ -186,8 +186,6 @@ st.markdown('</div>', unsafe_allow_html=True)
 #     st.write(f"**Physical Activity Level:** {physical_activity_level}")
 #     st.write(f"**Stress Level:** {stress_level}")
     
-
-
 # sleep quality determiner
 sleep_quality = produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate, occupation)
 st.write(f"**Sleep Quality:** {sleep_quality}")

@@ -127,12 +127,10 @@ st.markdown(
         margin-bottom: 40px;
     }
     .card {
-        background: white;
-        border-radius: 15px;
-        padding: 30px;
+        background: transparent;
+        padding: 0px;
         margin: auto;
         max-width: 700px;
-        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
     }
     .btn-submit {
         background-color: #0078d7;

@@ -130,7 +130,8 @@ st.markdown('<div class="subtitle">A Sleep Quality Prediction Model</div>', unsa
 
 # ---------------------------- FORM ----------------------------
 st.markdown('<div class="card">', unsafe_allow_html=True)
-st.header("User Input Form")
+
+# st.header("User Input Form")
 with st.form(key="user_input_form"):
     # Occupation and Age Fields
     col1, col2 = st.columns(2)

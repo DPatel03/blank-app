@@ -140,7 +140,7 @@ with st.form(key="user_input_form"):
     with col1:
         occupation = st.text_input("Occupation", placeholder="Enter your occupation")
     with col2:
-        age = st.number_input("Age", min_value=0, max_value=120, help="Enter your age (0-120)")
+        age = st.number_input("Age", min_value=0, max_value=100, help="Enter your age (0-100)")
 
     # Daily Steps and Heart Rate
     col3, col4 = st.columns(2)
@@ -178,15 +178,15 @@ st.markdown('</div>', unsafe_allow_html=True)
 
 # ---------------------------- PREDICTION ----------------------------
 # Submit Button
-if submit_button:
-    # Display the user inputs after submission
-    st.write(f"**Occupation:** {occupation}")
-    st.write(f"**Age:** {age}")
-    st.write(f"**Daily Steps:** {daily_steps}")
-    st.write(f"**Heart Rate:** {heart_rate}")  
-    st.write(f"**Sleep Duration:** {sleep_duration}")         
-    st.write(f"**Physical Activity Level:** {physical_activity_level}")
-    st.write(f"**Stress Level:** {stress_level}")
+# if submit_button:
+#     # Display the user inputs after submission
+#     st.write(f"**Occupation:** {occupation}")
+#     st.write(f"**Age:** {age}")
+#     st.write(f"**Daily Steps:** {daily_steps}")
+#     st.write(f"**Heart Rate:** {heart_rate}")  
+#     st.write(f"**Sleep Duration:** {sleep_duration}")         
+#     st.write(f"**Physical Activity Level:** {physical_activity_level}")
+#     st.write(f"**Stress Level:** {stress_level}")
     
 
 

@@ -153,7 +153,7 @@ st.markdown(
         box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
     }
     .result-text {
-        font-size: 1.5rem;
+        font-size: 2rem;
         font-weight: bold;
         text-align: center;
         color: #0078d7;

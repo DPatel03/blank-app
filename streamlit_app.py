@@ -127,7 +127,7 @@ st.markdown(
         margin-bottom: 40px;
     }
     .card {
-        background: transparent;
+        background: white;
         padding: 0px;
         margin: auto;
         max-width: 700px;

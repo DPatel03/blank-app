@@ -146,9 +146,8 @@ st.markdown('<div class="subtitle">A Sleep Quality Prediction Model</div>', unsa
 
 # ---------------------------- FORM ----------------------------
 main_tab, info_tab = st.tabs(["Main Form", "Stress & Physical Activity Info"])
-    # st.markdown('<div class="card">', unsafe_allow_html=True)
-    
-    # st.header("User Input Form")
+with main_tab:
+    st.markdown('<div class="card">', unsafe_allow_html=True)
     with st.form(key="user-input-form"):
         # Occupation and Age Fields
         col1, col2 = st.columns(2)
@@ -235,7 +234,7 @@ main_tab, info_tab = st.tabs(["Main Form", "Stress & Physical Activity Info"])
         # Submit Button
         submit_button = st.form_submit_button(label="Predict Sleep Quality", type="primary")
     
-# st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown('</div>', unsafe_allow_html=True)
 with info_tab:
     st.markdown("### Stress & Physical Activity Levels Guide")
     st.write("""

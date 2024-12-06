@@ -268,7 +268,7 @@ if submit_button:
     # Display the prediction result
     if sleep_quality > sleep_duration:
         sleep_quality = sleep_duration
-    st.markdown(f'<div class="result-text">Sleep Quality: {sleep_quality}</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="result-text">Sleep Quality Score: {sleep_quality}</div>', unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
     # Display Sleep Quality Rating with Color Coding
     prediction = sleep_quality

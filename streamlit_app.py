@@ -290,7 +290,7 @@ if submit_button:
         st.error("Please enter a valid sleep duration (1-10 hours).")
     # If all inputs are vaild then call the prediction function
     else:
-    sleep_quality = produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate, occupation)
+        sleep_quality = produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate, occupation)
     
     # Display the prediction result
     if sleep_quality > sleep_duration:

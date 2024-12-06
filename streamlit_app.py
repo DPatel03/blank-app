@@ -272,7 +272,24 @@ if submit_button:
     # st.write(f"**Sleep Duration:** {sleep_duration}")         
     # st.write(f"**Physical Activity Level:** {physical_activity_level}")
     # st.write(f"**Stress Level:** {stress_level}")
-    # Call the prediction function
+    if submit_button:
+    # Validation: Ensure all fields are properly filled
+    if not occupation:
+        st.error("Please select your occupation.")
+    elif age < 5 or age > 90:
+        st.error("Please enter a valid age between 5 and 90.")
+    elif daily_steps == 0:
+        st.error("Please enter your daily steps (greater than 0).")
+    elif heart_rate < 40 or heart_rate > 170:
+        st.error("Please enter a valid heart rate (40-170 bpm).")
+    elif physical_activity_level < 1 or physical_activity_level > 10:
+        st.error("Please select a valid physical activity level (1-10).")
+    elif stress_level < 1 or stress_level > 10:
+        st.error("Please select a valid stress level (1-10).")
+    elif sleep_duration < 1 or sleep_duration > 10:
+        st.error("Please enter a valid sleep duration (1-10 hours).")
+    # If all inputs are vaild then call the prediction function
+    else:
     sleep_quality = produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate, occupation)
     
     # Display the prediction result

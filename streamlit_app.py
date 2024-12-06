@@ -235,7 +235,7 @@ main_tab, info_tab = st.tabs(["Main Form", "Stress & Physical Activity Info"])
         # Submit Button
         submit_button = st.form_submit_button(label="Predict Sleep Quality", type="primary")
     
-    st.markdown('</div>', unsafe_allow_html=True)
+        st.markdown('</div>', unsafe_allow_html=True)
 with info_tab:
     st.markdown("### Stress & Physical Activity Levels Guide")
     st.write("""

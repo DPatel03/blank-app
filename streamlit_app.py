@@ -125,7 +125,7 @@ st.markdown(
         text-align: center;
         color: white;
         font-size: 1.2rem;
-        margin-bottom: 40px;
+        margin-bottom: 35px;
     }
     .card {
         background: transparent;

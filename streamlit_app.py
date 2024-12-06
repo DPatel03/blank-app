@@ -220,31 +220,31 @@ with st.form(key="user-input-form"):
 
    # Lifestyle Factors Section
 st.subheader("Lifestyle Factors")
-col5, col6, col7 = st.columns(3)
-with col5:
-    physical_activity_level = st.slider(
-        "Physical Activity Level", 
-        min_value=1, 
-        max_value=10, 
-        value=5, 
-        help="1 = Very low activity, 10 = Very high activity"
+    col5, col6, col7 = st.columns(3)
+    with col5:
+        physical_activity_level = st.slider(
+            "Physical Activity Level", 
+            min_value=1, 
+            max_value=10, 
+            value=5, 
+            help="1 = Very low activity, 10 = Very high activity"
     )
-with col6:
-    stress_level = st.number_input(
-        "Stress Level (out of 100)", 
-        min_value=0, 
-        max_value=100, 
-        step=1, 
-        value=50, 
+    with col6:
+        stress_level = st.number_input(
+            "Stress Level (out of 100)", 
+            min_value=0, 
+            max_value=100, 
+            step=1, 
+            value=10, 
         help="Enter your stress level as a percentage (0-100)"
     )
-with col7:
-    sleep_duration = st.number_input(
-        "Sleep Duration (hours)", 
-        min_value=1, 
-        max_value=10, 
-        step=1, 
-        help="Enter sleep duration in hours"
+    with col7:
+        sleep_duration = st.number_input(
+            "Sleep Duration (hours)", 
+            min_value=1, 
+            max_value=10, 
+            step=1, 
+            help="Enter sleep duration in hours"
     )
 
     

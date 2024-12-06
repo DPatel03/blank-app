@@ -221,7 +221,7 @@ with st.form(key="user-input-form"):
    # Lifestyle Factors Section
     st.subheader("Lifestyle Factors")
     col5, col6, col7 = st.columns(3)
-    with col6:
+    with col5:
         stress_level = st.number_input(
             "Stress Level (out of 100)", 
             min_value=0, 

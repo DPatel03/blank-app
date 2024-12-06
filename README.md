@@ -29,7 +29,7 @@ It is beneficial for people to understand and be aware of their sleep quality, a
 2. Submit information.
 3. Recieve sleep quality score and rating as output.
 
-### Process
+### Development Process
 
 1. Determining most relevant features using correlation matrix and feature importance function.
 2. Building relevant model: Random Forest Regressor.

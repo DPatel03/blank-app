@@ -178,7 +178,7 @@ with st.form(key="user-input-form"):
     col1, col2 = st.columns(2)
     with col1:
     # Select occupation from predefined list
-        occupation = st.selectbox(
+       occupation = st.selectbox(
             "Select Occupation",
             [""] + [
                 "Nurse",
@@ -193,7 +193,7 @@ with st.form(key="user-input-form"):
                 "Sales Representative",
                 "Manager",
             ],
-            index=0,
+            index=0,  # Default to empty selection
             help="Choose your occupation from the list",
         )
     with col2:

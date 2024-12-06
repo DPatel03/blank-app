@@ -180,7 +180,7 @@ with st.form(key="user-input-form"):
     # Select occupation from predefined list
         occupation = st.selectbox(
             "Select Occupation",
-            [
+            [""] + [
                 "Nurse",
                 "Teacher",
                 "Salesperson",
@@ -192,9 +192,10 @@ with st.form(key="user-input-form"):
                 "Software Engineer",
                 "Sales Representative",
                 "Manager",
-        ],
-        help="Choose your occupation from the list"
-    )
+            ],
+            index=0,  # Default to empty selection
+            help="Choose your occupation from the list",
+        )
     with col2:
         age = st.number_input(
             "Age", 

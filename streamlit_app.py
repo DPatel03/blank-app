@@ -145,96 +145,115 @@ st.markdown('<div class="title">💤 ZzzPredict 💤</div>', unsafe_allow_html=T
 st.markdown('<div class="subtitle">A Sleep Quality Prediction Model</div>', unsafe_allow_html=True)
 
 # ---------------------------- FORM ----------------------------
-st.markdown('<div class="card">', unsafe_allow_html=True)
-
-# st.header("User Input Form")
-with st.form(key="user-input-form"):
-    # Occupation and Age Fields
-    col1, col2 = st.columns(2)
-    with col1:
-    # Select occupation from predefined list
-       occupation = st.selectbox(
-            "Select Occupation",
-            [""] + [
-                "Nurse",
-                "Teacher",
-                "Salesperson",
-                "Doctor",
-                "Engineer",
-                "Lawyer",
-                "Accountant",
-                "Scientist",
-                "Software Engineer",
-                "Sales Representative",
-                "Manager",
-            ],
-            index=0,  # Default to empty selection
-            help="Choose your occupation from the list",
-        )
-    with col2:
-        age = st.number_input(
-            "Age",
-            min_value=0,
-            max_value=90,
-            value=0,  
-            help="Enter your age (5-90)",
-        )
-
-     # Daily Steps and Heart Rate
-    col3, col4 = st.columns(2)
-    with col3:
-        daily_steps = st.number_input(
-            "Daily Steps",
-            min_value=0,
-            max_value=75000,
-            step=100,
-            value=0,  # Default to 0
-            help="Enter your average daily step count",
-        )
-    with col4:
-        heart_rate = st.number_input(
-            "Heart Rate",
-            min_value=0,
-            max_value=170,
-            step=1,
-            value=0,  # Default to 0
-            help="Enter your heart rate (40-170 bpm)",
-        )
-
-    # Lifestyle Factors Section
-    st.subheader("Lifestyle Factors")
-    col5, col6, col7 = st.columns(3)
-    with col5:
-        physical_activity_level = st.slider(
-            "Physical Activity Level",
-            min_value=0,
-            max_value=10,
-            value=0,  # Default to 0
-            help="1 = Very low activity, 10 = Very high activity",
-        )
-    with col6:
-        stress_level = st.slider(
-            "Stress Level",
-            min_value=0,
-            max_value=10,
-            value=0,  # Default to 0
-            help="1 = Very low stress, 10 = Very high stress",
-        )
-    with col7:
-        sleep_duration = st.number_input(
-            "Sleep Duration (hours)",
-            min_value=0,
-            max_value=10,
-            step=1,
-            value=0,  # Default to 0
-            help="Enter sleep duration in hours",
-        )
-
+main_tab, info_tab = st.tabs(["Main Form", "Stress & Physical Activity Info"])
+    st.markdown('<div class="card">', unsafe_allow_html=True)
     
-    # Submit Button
-    submit_button = st.form_submit_button(label="Predict Sleep Quality", type="primary")
+    # st.header("User Input Form")
+    with st.form(key="user-input-form"):
+        # Occupation and Age Fields
+        col1, col2 = st.columns(2)
+        with col1:
+        # Select occupation from predefined list
+           occupation = st.selectbox(
+                "Select Occupation",
+                [""] + [
+                    "Nurse",
+                    "Teacher",
+                    "Salesperson",
+                    "Doctor",
+                    "Engineer",
+                    "Lawyer",
+                    "Accountant",
+                    "Scientist",
+                    "Software Engineer",
+                    "Sales Representative",
+                    "Manager",
+                ],
+                index=0,  # Default to empty selection
+                help="Choose your occupation from the list",
+            )
+        with col2:
+            age = st.number_input(
+                "Age",
+                min_value=0,
+                max_value=90,
+                value=0,  
+                help="Enter your age (5-90)",
+            )
+    
+         # Daily Steps and Heart Rate
+        col3, col4 = st.columns(2)
+        with col3:
+            daily_steps = st.number_input(
+                "Daily Steps",
+                min_value=0,
+                max_value=75000,
+                step=100,
+                value=0,  # Default to 0
+                help="Enter your average daily step count",
+            )
+        with col4:
+            heart_rate = st.number_input(
+                "Heart Rate",
+                min_value=0,
+                max_value=170,
+                step=1,
+                value=0,  # Default to 0
+                help="Enter your heart rate (40-170 bpm)",
+            )
+    
+        # Lifestyle Factors Section
+        st.subheader("Lifestyle Factors")
+        col5, col6, col7 = st.columns(3)
+        with col5:
+            physical_activity_level = st.slider(
+                "Physical Activity Level",
+                min_value=0,
+                max_value=10,
+                value=0,  # Default to 0
+                help="Refer to the 'Stress & Physical Activity Info' tab for details.",
+            )
+        with col6:
+            stress_level = st.slider(
+                "Stress Level",
+                min_value=0,
+                max_value=10,
+                value=0,  # Default to 0
+                help="Refer to the 'Stress & Physical Activity Info' tab for details.",
+            )
+        with col7:
+            sleep_duration = st.number_input(
+                "Sleep Duration (hours)",
+                min_value=0,
+                max_value=10,
+                step=1,
+                value=0,  # Default to 0
+                help="Enter sleep duration in hours",
+            )
+    
+        
+        # Submit Button
+        submit_button = st.form_submit_button(label="Predict Sleep Quality", type="primary")
+    
+    st.markdown('</div>', unsafe_allow_html=True)
+with info_tab:
+    st.markdown("### Stress & Physical Activity Levels Guide")
+    st.write("""
+    **Stress Levels Guide**  
+    - **0-1 (Very Low Stress)**: Minimal stress levels, very relaxed.  
+    - **2-3 (Low Stress)**: Low stress levels, occasional minor challenges.  
+    - **4-6 (Moderate Stress)**: Manageable stress levels with some ongoing challenges.  
+    - **7-9 (High Stress)**: Frequent anxiety and tension, affecting daily well-being.  
+    - **10 (Very High Stress)**: Severe stress levels, often overwhelming.  
 
-st.markdown('</div>', unsafe_allow_html=True)
+    **Physical Activity Levels Guide**  
+    - **0-1 (Very Low Activity)**: 0-5 minutes of physical activity per day, primarily sedentary lifestyle.  
+    - **2-3 (Low Activity)**: Limited physical activity, less than 20 minutes of exercise per day. 
+    - **5-6 ((Moderate Activity)**: Regular exercise or active lifestyle, 20-40 minutes of activity per day.  
+    - **7-9 (High Activity)**: Regular exercise or active lifestyle, 40-60 minutes of activity per day.  
+    - **10 (Very High Activity)**: 60+ minutes of high-intensity workouts or very active routines daily.  
+    """)
+    st.info("Use this guide to select the levels that best match your current lifestyle and stress state.")
 
 # ---------------------------- PREDICTION ----------------------------
 # Submit Button

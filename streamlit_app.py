@@ -292,28 +292,28 @@ if submit_button:
     else:
         sleep_quality = produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate, occupation)
     
-    # Display the prediction result
-    if sleep_quality > sleep_duration:
-        sleep_quality = sleep_duration
-    st.markdown(f'<div class="result-text">Sleep Quality Score: {sleep_quality}</div>', unsafe_allow_html=True)
-    st.markdown('</div>', unsafe_allow_html=True)
-    # Display Sleep Quality Rating with Color Coding
-    prediction = sleep_quality
-    if prediction >= 8:
-        quality = "Excellent"
-        color = "darkgreen"
-    elif prediction >= 6:
-        quality = "Good"
-        color = "green"
-    elif prediction >= 4:
-        quality = "Fair"
-        color = "orange"
-    else:
-        quality = "Poor"
-        color = "red"
-
-    # Render the rating with color
-    st.markdown(f'<h3 style="color: {color}; text-align: center;">Sleep Quality Rating: {quality}</h3>', unsafe_allow_html=True)
+        # Display the prediction result
+        if sleep_quality > sleep_duration:
+            sleep_quality = sleep_duration
+        st.markdown(f'<div class="result-text">Sleep Quality Score: {sleep_quality}</div>', unsafe_allow_html=True)
+        st.markdown('</div>', unsafe_allow_html=True)
+        # Display Sleep Quality Rating with Color Coding
+        prediction = sleep_quality
+        if prediction >= 8:
+            quality = "Excellent"
+            color = "darkgreen"
+        elif prediction >= 6:
+            quality = "Good"
+            color = "green"
+        elif prediction >= 4:
+            quality = "Fair"
+            color = "orange"
+        else:
+            quality = "Poor"
+            color = "red"
+    
+        # Render the rating with color
+        st.markdown(f'<h3 style="color: {color}; text-align: center;">Sleep Quality Rating: {quality}</h3>', unsafe_allow_html=True)
 
 
     

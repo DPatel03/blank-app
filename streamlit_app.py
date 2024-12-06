@@ -274,10 +274,10 @@ if submit_button:
     prediction = sleep_quality
     if prediction >= 8:
         quality = "Excellent"
-        color = "green"
+        color = "darkgreen"
     elif prediction >= 6:
         quality = "Good"
-        color = "blue"
+        color = "green"
     elif prediction >= 4:
         quality = "Fair"
         color = "orange"

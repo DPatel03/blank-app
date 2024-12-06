@@ -272,7 +272,7 @@ if submit_button:
     # st.write(f"**Sleep Duration:** {sleep_duration}")         
     # st.write(f"**Physical Activity Level:** {physical_activity_level}")
     # st.write(f"**Stress Level:** {stress_level}")
-    if submit_button:
+    
     # Validation: Ensure all fields are properly filled
     if occupation == "":
         st.error("Please select your occupation.")

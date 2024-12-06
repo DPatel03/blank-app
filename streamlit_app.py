@@ -223,7 +223,7 @@ with st.form(key="user-input-form"):
     col5, col6, col7 = st.columns(3)
     with col5:
         physical_activity_level = st.number_input(
-            "Physical Activity Level" (out of 100)", 
+            "Physical Activity Level ", 
             min_value=0, 
             max_value=100, 
             step=1, 

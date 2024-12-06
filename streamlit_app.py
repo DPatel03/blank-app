@@ -219,16 +219,8 @@ with st.form(key="user-input-form"):
             help="Enter your heart rate (40-175 bpm)")
 
    # Lifestyle Factors Section
-st.subheader("Lifestyle Factors")
+    st.subheader("Lifestyle Factors")
     col5, col6, col7 = st.columns(3)
-    with col5:
-        physical_activity_level = st.slider(
-            "Physical Activity Level", 
-            min_value=1, 
-            max_value=10, 
-            value=5, 
-            help="1 = Very low activity, 10 = Very high activity"
-    )
     with col6:
         stress_level = st.number_input(
             "Stress Level (out of 100)", 
@@ -236,16 +228,23 @@ st.subheader("Lifestyle Factors")
             max_value=100, 
             step=1, 
             value=10, 
-        help="Enter your stress level as a percentage (0-100)"
-    )
+            help="Enter your stress level as a percentage (0-100)"
+        )
+    with col6:
+        stress_level = st.slider(
+            "Stress Level", 
+            min_value=1, 
+            max_value=10, 
+            value=5, 
+            help="1 = Very low stress, 10 = Very high stress"
+        )
     with col7:
         sleep_duration = st.number_input(
             "Sleep Duration (hours)", 
             min_value=1, 
             max_value=10, 
             step=1, 
-            help="Enter sleep duration in hours"
-    )
+            help="Enter sleep duration in hours")
 
     
     # Submit Button

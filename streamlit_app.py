@@ -36,31 +36,6 @@ rf = load_rf()
 #     print(pred_rf)
 #     return pred_rf[0]
 
-# Ensure features match those used during training
-# def produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate, occupation):
-#     # Hold user input
-#     user_input = {
-#         'Age': age,
-#         'Daily Steps': daily_steps,
-#         'Physical Activity Level': physical_activity_level,
-#         'Stress Level': stress_level,
-#         'Sleep Duration': sleep_duration,
-#         'Heart Rate': heart_rate,
-#         'Occupation': occupation  # Directly add the occupation integer
-#     }
-
-#     # Create DataFrame from user input
-#     user_input_df = pd.DataFrame([user_input])
-
-#     # Align DataFrame columns to match model's expected input
-#     expected_columns = list(rf.feature_names_in_)
-#     user_input_df = user_input_df.reindex(columns=expected_columns, fill_value=0)
-
-#     # Predict using model
-#     pred_rf = rf.predict(user_input_df)
-#     print(pred_rf)
-#     return pred_rf[0]
-
 # fixed version
 def produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate, occupation):
     # Map occupation to integer

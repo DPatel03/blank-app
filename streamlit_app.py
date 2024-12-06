@@ -205,49 +205,55 @@ with st.form(key="user-input-form"):
             help="Enter your age (5-90)",
         )
 
-    # Daily Steps and Heart Rate
+     # Daily Steps and Heart Rate
     col3, col4 = st.columns(2)
     with col3:
         daily_steps = st.number_input(
-            "Daily Steps", 
-            min_value=0, 
-            max_value = 75000,
-            step=100, 
-            help="Enter your average daily step count")
+            "Daily Steps",
+            min_value=0,
+            max_value=75000,
+            step=100,
+            value=0,  # Default to 0
+            help="Enter your average daily step count",
+        )
     with col4:
         heart_rate = st.number_input(
-            "Heart Rate",  
-            min_value=40, 
-            max_value=170,  
-            step=1, 
-            help="Enter your heart rate (40-175 bpm)")
+            "Heart Rate",
+            min_value=0,
+            max_value=170,
+            step=1,
+            value=0,  # Default to 0
+            help="Enter your heart rate (40-170 bpm)",
+        )
 
-   # Lifestyle Factors Section
+    # Lifestyle Factors Section
     st.subheader("Lifestyle Factors")
     col5, col6, col7 = st.columns(3)
     with col5:
         physical_activity_level = st.slider(
-            "Physical Activity Level", 
-            min_value=1, 
-            max_value=10, 
-            value=5, 
-            help="1 = Very low activity, 10 = Very high activity"
+            "Physical Activity Level",
+            min_value=0,
+            max_value=10,
+            value=0,  # Default to 0
+            help="1 = Very low activity, 10 = Very high activity",
         )
     with col6:
         stress_level = st.slider(
-            "Stress Level", 
-            min_value=1, 
-            max_value=10, 
-            value=5, 
-            help="1 = Very low stress, 10 = Very high stress"
+            "Stress Level",
+            min_value=0,
+            max_value=10,
+            value=0,  # Default to 0
+            help="1 = Very low stress, 10 = Very high stress",
         )
     with col7:
         sleep_duration = st.number_input(
-            "Sleep Duration (hours)", 
-            min_value=1, 
-            max_value=10, 
-            step=1, 
-            help="Enter sleep duration in hours")
+            "Sleep Duration (hours)",
+            min_value=0,
+            max_value=10,
+            step=1,
+            value=0,  # Default to 0
+            help="Enter sleep duration in hours",
+        )
 
     
     # Submit Button

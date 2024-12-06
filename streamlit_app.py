@@ -193,15 +193,16 @@ with st.form(key="user-input-form"):
                 "Sales Representative",
                 "Manager",
             ],
-            index=0,  # Default to empty selection
+            index=0,
             help="Choose your occupation from the list",
         )
     with col2:
         age = st.number_input(
-            "Age", 
-            min_value=5, 
-            max_value=90, 
-            help="Enter your age (5-90)"
+            "Age",
+            min_value=0,
+            max_value=90,
+            value=0,  
+            help="Enter your age (5-90)",
         )
 
     # Daily Steps and Heart Rate

@@ -239,18 +239,18 @@ with info_tab:
     st.markdown("### Stress & Physical Activity Levels Guide")
     st.write("""
     **Stress Levels Guide**  
-    - **0-1: Very relaxed.  
-    - **2-3: Low stress levels, minor challanges.  
-    - **4-6: Stress levels that are under control sometimes, with some ongoing hurdles..  
-    - **7-9: Frequent anxiety and tension, affecting daily well-being.  
-    - **10: Very stressful, often overwhelming.  
+    - 0-1: Very relaxed.  
+    - 2-3: Low stress levels, minor challanges.  
+    - 4-6: Stress levels that are under control sometimes, with some ongoing hurdles..  
+    - 7-9: Frequent anxiety and tension, affecting daily well-being.  
+    - 10: Very stressful, often overwhelming.  
 
     **Physical Activity Levels Guide**  
-    - **0-1: 0-5 minutes of physical activity per day.  
-    - **2-3: Less than 20 minutes of exercise per day. 
-    - **5-6: Regular exercise around 20 to 40 minutes of activity per day.  
-    - **7-9: Exerices around 40-60 minutes of activity per day.  
-    - **10: 60+ minutes of activity per day
+    - 0-1: 0-5 minutes of physical activity per day.  
+    - 2-3: Less than 20 minutes of exercise per day. 
+    - 5-6: Regular exercise around 20 to 40 minutes of activity per day.  
+    - 7-9: Exerices around 40-60 minutes of activity per day.  
+    - 10: 60+ minutes of activity per day
     """)
     st.info("Follow the given guide to choose the levels that Physical Activity Levels apply your current lifestyle and the Stress Level state you are in.")
 

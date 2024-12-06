@@ -222,13 +222,13 @@ with st.form(key="user-input-form"):
     st.subheader("Lifestyle Factors")
     col5, col6, col7 = st.columns(3)
     with col5:
-        stress_level = st.number_input(
-            "Stress Level (out of 100)", 
+        physical_activity_level = st.number_input(
+            "Physical Activity Level" (out of 100)", 
             min_value=0, 
             max_value=100, 
             step=1, 
             value=10, 
-            help="Enter your stress level as a percentage (0-100)"
+            help="Enter your Physical Activity level as a percentage (0-100)"
         )
     with col6:
         stress_level = st.slider(

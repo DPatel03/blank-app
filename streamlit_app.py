@@ -246,11 +246,11 @@ with info_tab:
     - **10 (Very High Stress)**: Severe stress levels, often overwhelming.  
 
     **Physical Activity Levels Guide**  
-    - **0-1 (Very Low Activity)**: 0-5 minutes of physical activity per day, primarily sedentary lifestyle.  
-    - **2-3 (Low Activity)**: Limited physical activity, less than 20 minutes of exercise per day. 
-    - **5-6 ((Moderate Activity)**: Regular exercise or active lifestyle, 20-40 minutes of activity per day.  
-    - **7-9 (High Activity)**: Regular exercise or active lifestyle, 40-60 minutes of activity per day.  
-    - **10 (Very High Activity)**: 60+ minutes of high-intensity workouts or very active routines daily.  
+    - **0-1 (Very Low Activity)**: 0-5 minutes of physical activity per day.  
+    - **2-3 (Low Activity)**: Less than 20 minutes of exercise per day. 
+    - **5-6 ((Moderate Activity)**: Regular exercise around 20 to 40 minutes of activity per day.  
+    - **7-9 (High Activity)**: Exerices around 40-60 minutes of activity per day.  
+    - **10 (Very High Activity)**: 60+ minutes of activity per day
     """)
     st.info("Follow the given guide to choose the levels that Physical Activity Levels apply your current lifestyle and the Stress Level state you are in.")
 

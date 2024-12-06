@@ -286,8 +286,7 @@ if submit_button:
         color = "red"
 
     # Render the rating with color
-    st.markdown(f"<div style='color: {color}'>Sleep Quality Rating: {quality}</div>", unsafe_allow_html=True)
-    st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown(f"<h3 style='color: {color}'>Sleep Quality Rating: {quality}</h3>", unsafe_allow_html=True)
 
 
     

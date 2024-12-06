@@ -266,6 +266,8 @@ if submit_button:
     sleep_quality = produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate, occupation)
     
     # Display the prediction result
+    if sleep_quality > sleep_duration:
+        sleep_quality = sleep_duration
     st.markdown(f'<div class="result-text">Sleep Quality: {sleep_quality}</div>', unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
 

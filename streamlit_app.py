@@ -164,7 +164,7 @@ st.markdown(
 )
 
 # ---------------------------- HEADER ----------------------------
-st.markdown('<div class="title">💤Predict</div>', unsafe_allow_html=True)
+st.markdown('<div class="title">💤 ZzzPredict 💤</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">A Sleep Quality Prediction Model</div>', unsafe_allow_html=True)
 
 # ---------------------------- FORM ----------------------------

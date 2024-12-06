@@ -60,7 +60,8 @@ rf = load_rf()
 #     pred_rf = rf.predict(user_input_df)
 #     print(pred_rf)
 #     return pred_rf[0]
-# fix version
+
+# fixed version
 def produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate, occupation):
     # Map occupation to integer
     occupation_mapping = {
@@ -164,6 +165,7 @@ st.markdown(
 )
 
 # ---------------------------- HEADER ----------------------------
+
 st.markdown('<div class="title">💤 ZzzPredict 💤</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">A Sleep Quality Prediction Model</div>', unsafe_allow_html=True)
 

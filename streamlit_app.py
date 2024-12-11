@@ -307,6 +307,17 @@ if submit_button:
     
         # Render the rating with color
         st.markdown(f'<h3 style="color: {color}; text-align: center;">Sleep Quality Rating: {quality}</h3>', unsafe_allow_html=True)
+        
+        if quality == "Excellent":
+            quality_desc = "Congratulations, you have an excellent quality of sleep. You have a good balance of the \nmajor factors that effect a person's sleep quality. Feel free to adjust different factors \nand see how your sleep can be even better!"
+        elif quality == "Good":
+            quality_desc = "Congratulations, you have fairly good quality of sleep. You have a good balance of the \nmajor factors that effect a person's sleep quality. Feel free to adjust different factors \nand see how your sleep can be even better!"
+        elif quality = "Fair":
+            quality_desc = "You have a fair quality of sleep. There are some lifestyle factors that could use \nimprovement. Feel free to adjust these factors and see how your sleep quality can be better!"
+        else:
+            quality desc = "You have a poor quality of sleep. There are lifestyle factors that you can focus on \nimproving. Feel free to adjust these factors and see how your sleep quality can be better!"
+
+        st.markdown(f'<h3 style="color: {color}; text-align: center;">{quality_desc}</h3>', unsafe_allow_html=True)
 
 
     

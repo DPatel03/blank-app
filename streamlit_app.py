@@ -52,6 +52,12 @@ def produce_output(age, daily_steps, physical_activity_level, stress_level, slee
         "Sales Representative": 10,
         "Manager": 11,
     }
+        # Handle "Other" or custom occupation
+    if occupation in occupation_mapping:
+        occupation_encoded = occupation_mapping[occupation]
+    else:
+        occupation_encoded = 0  # Assign a default value for unknown occupations
+        
     occupation_encoded = occupation_mapping.get(occupation, 0)
 
     # Prepare input data
@@ -152,25 +158,36 @@ with main_tab:
         # Occupation and Age Fields
         col1, col2 = st.columns(2)
         with col1:
-        # Select occupation from predefined list
-           occupation = st.selectbox(
-                "Select Occupation",
-                [""] + [
-                    "Nurse",
-                    "Teacher",
-                    "Salesperson",
-                    "Doctor",
-                    "Engineer",
-                    "Lawyer",
-                    "Accountant",
-                    "Scientist",
-                    "Software Engineer",
-                    "Sales Representative",
-                    "Manager",
-                ],
-                index=0,  # Default to empty selection
-                help="Choose your occupation from the list",
-            )
+    # Occupation Selection
+    occupation = st.selectbox(
+        "Select Occupation",
+        [""] + [
+            "Nurse",
+            "Teacher",
+            "Salesperson",
+            "Doctor",
+            "Engineer",
+            "Lawyer",
+            "Accountant",
+            "Scientist",
+            "Software Engineer",
+            "Sales Representative",
+            "Manager",
+            "Other",
+        ],
+        index=0,  # Default to empty selection
+        help="Choose your occupation from the list. Select 'Other' to enter a custom occupation.",
+    )
+
+    if occupation == "Other":
+        # Custom occupation input if "Other" is selected
+        custom_occupation = st.text_input(
+            "Enter Your Occupation",
+            "",
+            help="Type your occupation.",
+        )
+        occupation = custom_occupation  # Use the custom occupation for processing
+
         with col2:
             age = st.number_input(
                 "Age",

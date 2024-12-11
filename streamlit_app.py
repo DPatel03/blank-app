@@ -158,37 +158,36 @@ with main_tab:
         # Occupation and Age Fields
         col1, col2 = st.columns(2)
         with col1:
-        # Occupation Selection
-        occupation = st.selectbox(
-            "Select Occupation",
-            [""] + [
-                "Nurse",
-                "Teacher",
-                "Salesperson",
-                "Doctor",
-                "Engineer",
-                "Lawyer",
-                "Accountant",
-                "Scientist",
-                "Software Engineer",
-                "Sales Representative",
-                "Manager",
-                "Other",
-            ],
-            index=0,  # Default to empty selection
-            help="Choose your occupation from the list. Select 'Other' to enter a custom occupation.",
-        )
-
-        if occupation == "Other":
-            # Custom occupation input if "Other" is selected
-            custom_occupation = st.text_input(
-                "Enter Your Occupation",
-                "",
-                help="Type your occupation.",
+            # Occupation Selection
+            occupation = st.selectbox(
+                "Select Occupation",
+                [""] + [
+                    "Nurse",
+                    "Teacher",
+                    "Salesperson",
+                    "Doctor",
+                    "Engineer",
+                    "Lawyer",
+                    "Accountant",
+                    "Scientist",
+                    "Software Engineer",
+                    "Sales Representative",
+                    "Manager",
+                    "Other",
+                ],
+                index=0,  # Default to empty selection
+                help="Choose your occupation from the list. Select 'Other' to enter a custom occupation.",
             )
-            occupation = custom_occupation  # Use the custom occupation for processing
+        
+            if occupation == "Other":
+                # Custom occupation input if "Other" is selected
+                custom_occupation = st.text_input(
+                    "Enter Your Occupation",
+                    "",
+                    help="Type your occupation if you selected 'Other'.",
+                )
+                occupation = custom_occupation  # Use the custom occupation for processing
 
-        with col2:
             age = st.number_input(
                 "Age",
                 min_value=0,

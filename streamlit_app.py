@@ -184,7 +184,7 @@ with main_tab:
                 custom_occupation = st.text_input(
                     "Enter Your Occupation",
                     "",
-                    help="Type your occupation if you selected 'Other'.",
+                    help="Type your occupation.",
                 )
                 occupation = custom_occupation  # Use the custom occupation for processing
         with col2:

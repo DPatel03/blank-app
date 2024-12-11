@@ -315,7 +315,7 @@ if submit_button:
         elif quality == "Fair":
             quality_desc = "You have a fair quality of sleep. There are some lifestyle factors that could use \nimprovement. Feel free to adjust these factors and see how your sleep quality can be better!"
         else:
-            quality desc = "You have a poor quality of sleep. There are lifestyle factors that you can focus on \nimproving. Feel free to adjust these factors and see how your sleep quality can be better!"
+            quality_desc = "You have a poor quality of sleep. There are lifestyle factors that you can focus on \nimproving. Feel free to adjust these factors and see how your sleep quality can be better!"
 
         st.markdown(f'<h3 style="color: {color}; text-align: center;">{quality_desc}</h3>', unsafe_allow_html=True)
 

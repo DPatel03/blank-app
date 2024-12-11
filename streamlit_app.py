@@ -187,7 +187,7 @@ with main_tab:
                     help="Type your occupation if you selected 'Other'.",
                 )
                 occupation = custom_occupation  # Use the custom occupation for processing
-
+        with col2:
             age = st.number_input(
                 "Age",
                 min_value=0,

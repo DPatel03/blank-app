@@ -317,7 +317,7 @@ if submit_button:
         else:
             quality_desc = "You have a poor quality of sleep. There are lifestyle factors that you can focus on \nimproving. Feel free to adjust these factors and see how your sleep quality can be better!"
 
-        st.markdown(f'<h4 style="color: {color}; text-align: center;">{quality_desc}</h4>', unsafe_allow_html=True)
+        st.markdown(f'<h5 style="color: {color}; text-align: center;">{quality_desc}</h5>', unsafe_allow_html=True)
 
 
     

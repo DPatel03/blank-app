@@ -14,28 +14,6 @@ def load_rf():
     return rf
 rf = load_rf()
 
-# # define function that produces output
-# def produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate):
-    
-#     # hold user input
-#     user_input = {
-#     'Sleep Duration': sleep_duration,
-#     'Stress Level': stress_level,
-#     'Age': age,
-#     'Heart Rate': heart_rate,
-#     'Physical Activity Level': physical_activity_level,
-#     'Daily Steps': daily_steps
-#     }
-
-#     # dataframe to hold input
-#     user_input_df = pd.DataFrame([user_input])
-#     # print(user_input_df)
-
-#     # predict using model
-#     pred_rf = rf.predict(user_input_df)
-#     print(pred_rf)
-#     return pred_rf[0]
-
 # fixed version
 def produce_output(age, daily_steps, physical_activity_level, stress_level, sleep_duration, heart_rate, occupation):
     # Map occupation to integer

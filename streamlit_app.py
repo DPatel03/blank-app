@@ -58,7 +58,7 @@ def produce_output(age, daily_steps, physical_activity_level, stress_level, slee
     else:
         occupation_encoded = 0  # Assign a default value for unknown occupations
         
-    occupation_encoded = occupation_mapping.get(occupation, 0)
+    # occupation_encoded = occupation_mapping.get(occupation, 0)
 
     # Prepare input data
     user_input = {

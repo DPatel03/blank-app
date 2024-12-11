@@ -179,14 +179,14 @@ with main_tab:
             help="Choose your occupation from the list. Select 'Other' to enter a custom occupation.",
         )
 
-    if occupation == "Other":
-        # Custom occupation input if "Other" is selected
-        custom_occupation = st.text_input(
-            "Enter Your Occupation",
-            "",
-            help="Type your occupation.",
-        )
-        occupation = custom_occupation  # Use the custom occupation for processing
+        if occupation == "Other":
+            # Custom occupation input if "Other" is selected
+            custom_occupation = st.text_input(
+                "Enter Your Occupation",
+                "",
+                help="Type your occupation.",
+            )
+            occupation = custom_occupation  # Use the custom occupation for processing
 
         with col2:
             age = st.number_input(
